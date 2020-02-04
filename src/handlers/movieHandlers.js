@@ -10,4 +10,23 @@ const getMovieDetails=async(request,h)=>{
 	}
 };
 
-module.exports={getMovieDetails};
+const loadDB=async(request,h)=>{
+	try{
+		await operations.loadDB();
+		return h.response('DB loaded!');
+	}catch(err){
+		return h.response(err.message);
+	}
+
+};
+
+const postMovieDetail=async(request,h)=>{
+	try{
+		await operations.postDetail(request.payload);
+		return h.response('Movie Added!');
+	}catch(err){
+		return h.response('Error encountered!');
+	}
+};
+
+module.exports={getMovieDetails,postMovieDetail,loadDB};
