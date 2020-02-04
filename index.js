@@ -13,6 +13,6 @@ const loadDataBase=async()=>{
 };
 
 start();
-//loadDataBase();
+loadDataBase();
 console.log('Server Started!');
 console.log('DataBase Loaded! Yipee!');
