@@ -1,5 +1,4 @@
 const createServer=require('./src/server');
-const loadDB=require('./src/utils/loadDB');
 
 const start=async()=>{
 	const server=await createServer();
@@ -10,5 +9,5 @@ const start=async()=>{
 };
 
 start();
-//loadDB();
+
 console.log('Server Started!');
