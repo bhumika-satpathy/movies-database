@@ -1,4 +1,5 @@
 const readJson=require('./readJsonPage');
+//let loaded=false;
 
 //{"movies":[{"id":"6638453965","name":"The Shawshank Redemption","genres":[2,4]},{"id":"3704208720","name":"Inception","genres":[1,3,6]},
 // {"id":"5908099208","name":"Shutter Island","genres":[2,1,3]},{"id":"1393797017","name":"Fight Club","genres":[1,6]},

@@ -3,7 +3,7 @@ const operations=require('../utils/readMovieDetails');
 
 const getMovieDetails=async(request,h)=>{
 	try{
-		const res=await operations.getDetails();
+		const res=await operations.getDetails(request.params.id);
 		return h.response(res).code(200);
 	}catch(err){
 		return h.response(err.message).code(500);

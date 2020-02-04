@@ -1,9 +1,14 @@
 //const readJson=require('./readJsonPage');
 const db=require('../../models/index');
 const {moviesArray,genresArray,actorsArray}=require('../utils/loadDB');
+const uuid=require('uuid');
 
-const getDetails=async()=>{
-	return await db.moviedetails.findAll();
+const getDetails=async(updateID)=>{
+	return await db.moviedetails.findOne({
+		where:{
+			id:updateID
+		}
+	});
 };
 
 const postDetail=async(movie)=>{
@@ -20,7 +25,7 @@ const loadDB=async()=>{
 	const genresArr=await genresArray();
 	const actorsArr=await actorsArray();
 
-	 moviesArr.forEach(async(movie) => {
+	 await moviesArr.forEach(async(movie) => {
 
 		const fakeGenres=[];
 		const fakeActors=[];
@@ -38,9 +43,10 @@ const loadDB=async()=>{
 				}
 			});
 		});
+		// const uid=await uuid();
 		await db.moviedetails.create({
 			name:movie.name,
-			//id:movie.id,
+			// id:movie.id,
 			genres:fakeGenres,
 			actors:fakeActors
 		});
