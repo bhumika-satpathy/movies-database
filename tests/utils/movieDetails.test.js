@@ -41,21 +41,6 @@ describe('The postDetail function ',()=>{
     
 });
 
-describe('The loadDB function',()=>{
-	it('should invoke the create function',async()=>{
-		const mockCreate=jest.spyOn(db.moviedetails,'create');
-		mockCreate.mockResolvedValue();
-		const note={
-			name: 'Pineapple Express',
-			genres: ['Comedy','Drama'],
-			actors: ['Seth Rogen']  
-		};
-		mockCreate.mockResolvedValue();
-		await operations.loadDB();
-		expect(mockCreate).toHaveBeenCalledWith(note);
-	});
-});
-
 
 
 

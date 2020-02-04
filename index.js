@@ -1,5 +1,5 @@
 const createServer=require('./src/server');
-const operations=require('./src/utils/readMovieDetails');
+const loadDBOperation=require('./src/utils/loadDBOperation');
 const start=async()=>{
 	const server=await createServer();
 	server.start((err)=>{
@@ -9,10 +9,10 @@ const start=async()=>{
 };
 
 const loadDataBase=async()=>{
-	await operations.loadDB();
+	await loadDBOperation();
 };
 
 start();
-loadDataBase();
+//loadDataBase();
 console.log('Server Started!');
 console.log('DataBase Loaded! Yipee!');

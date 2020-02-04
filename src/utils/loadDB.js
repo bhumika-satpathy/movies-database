@@ -1,6 +1,3 @@
-const readJson=require('./readJsonPage');
-//let loaded=false;
-
 //{"movies":[{"id":"6638453965","name":"The Shawshank Redemption","genres":[2,4]},{"id":"3704208720","name":"Inception","genres":[1,3,6]},
 // {"id":"5908099208","name":"Shutter Island","genres":[2,1,3]},{"id":"1393797017","name":"Fight Club","genres":[1,6]},
 // {"id":"5908099207","name":"Titanic","genres":[5,4]},{"id":"7533474498","name":"Moneyball","genres":[4]},
@@ -13,6 +10,8 @@ const readJson=require('./readJsonPage');
 // {"name":"Morgan Freeman","movies":["6621531523","6638453965"]},
 // {"name":"Leonardo Di Caprio","movies":["5908099208","6621531522","3704208720","5908099207"]},
 // {"name":"Margot Robbie","movies":["6621531522","3704208722"]}]}
+
+const readJson=require('./readJsonPage');
 
 const moviesArray=async()=>{
 	const moviesJson=await readJson('https://stormy-plains-72807.herokuapp.com/movies');
